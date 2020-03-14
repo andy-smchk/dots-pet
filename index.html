@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 1</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        canvas{
+            width: 100%;
+            background: url("e2f6ca8b9d70379e167cc599b5deb524.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #menu{
+            font-family: 'Press Start 2P';
+            position: absolute;
+            background-color: rgba(15, 0, 4, 0.62);
+            color: white;
+            width: 500px;
+            height: 200px;
+            margin: 200px auto;
+            left: 0;
+            right: 0;
+        }
+
+        #startGame{
+            font-size: 23px;
+            text-align: center;
+            width: 300px;
+            margin: 75px auto;
+            padding: 15px 10px;
+            border: 3px solid #41cbd3;
+            cursor: pointer;
+        }
+    </style>
+    <script src="dat.gui.min.js"></script>
+</head>
+<body>
+<div id="menu">
+    <div id="startGame">START GAME!</div>
+</div>
+<audio loop id="music">
+    <source src="Blazer%20Rail.wav">
+</audio>
+
+
+<canvas id="board"></canvas>
+<script src="victor.min.js"></script>
+<script src="Helper.js"></script>
+<script src="World.js"></script>
+<script src="NoGravityWorld.js"></script>
+<script src="Core.js"></script>
+<script src="Canvas.js"></script>
+<script src="Drawer.js"></script>
+<script src="Player.js"></script>
+<script src="Editor.js"></script>
+<script src="App.js"></script>
+<script type="text/javascript">
+    document.getElementById('startGame').onclick = function changeContent() {
+        document.getElementById("menu").remove();
+        document.getElementById("music").play();
+        renderer.render();
+    };
+</script>
+</body>
+</html>
